@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<%
+	
+
+	
+	for(int dan=2; dan<10; dan++){
+		out.println("이번에 나온 구구단은"+dan+"단입니다.");
+		for(int i=1; i<10; i++){
+			out.println(dan+"*"+i+"="+dan*i+"<br/>");
+		}
+	}
+
+	%>
+	
+	
+</body>
+</html>

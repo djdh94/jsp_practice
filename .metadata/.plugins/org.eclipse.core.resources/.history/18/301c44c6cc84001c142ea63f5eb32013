@@ -1,0 +1,22 @@
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%-- form의 action의 바로 목적지를 적는 부분임.
+웹 개발에서는 받을 페이지 화면의 주소를 적어줌 --%>
+	<form>
+	<input type="text" name="apple" placeholder="apple"/><br/>
+	<input type="password" name="banana" placeholder="banana"/><br/>
+	<input type="reset" />
+	<input type="submit"/>
+	
+	
+	</form>
+</body>
+</html>

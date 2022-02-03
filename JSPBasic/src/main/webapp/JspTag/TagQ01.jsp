@@ -27,10 +27,11 @@
 			result="파랑";
 		}else{
 			result="노랑";
-		}
-			
+		}	
 		return result;
 	}
+		// declaration 선언한 변수는 서버를 끄기 전까지는 값이 누적됩니다.
+		public int total = 0;
 		 
 	%>
 	
@@ -38,6 +39,14 @@
 	<p>행운의 숫자는 1~10범위입니다.</p>
 	<p>행운의 숫자:<b><%=randomNumber() %></b></p>
 	<p>행운의 색깔:<b><%=randomColor() %></b></p>
+	<h3>오늘의 방문자수</h3>
+	<%
+		out.println(++total);
+	// scritlet 내부에 선언한 변수는 접속시마다 초기화됩니다
+	int currentNum=0;
+	out.println("<br/>");
+	out.println(++currentNum);
+	%>
 
 </body>
 </html>
