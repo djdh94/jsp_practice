@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%!
+	int total=0;
+	
+	%>
+	
+	<%
+	
+	
+	
+	%>
+	<p>페이지누적 요청수:<%=(++total) %></p><br/>
+	<p>매 10번쨰 방문자에게 기프티콘을 드립니다.</p><br/>
+	
+	
+	
+</body>
+</html>
