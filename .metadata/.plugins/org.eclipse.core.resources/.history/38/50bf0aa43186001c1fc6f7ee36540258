@@ -1,0 +1,31 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>로또번호 생성 결과</h1>
+	<p>이번주 로또는 이번호</p>
+	<%
+	
+	List<Integer> lotto = new ArrayList<>();
+	int num=(int)(Math.random()*45)+1;
+	while(true){
+		if(!lotto.contains(num)){
+			lotto.add(num);
+		}
+		else if(lotto.size()==6){
+			break;
+		}
+	}
+	
+	%>
+</body>
+</html>

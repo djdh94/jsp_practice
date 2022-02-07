@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 로그인창은 form으로 구성하기 
+input text 1개(유저아이디입력),input password 1개(비밀번호 입력)
+input checkbox 1개(자동로그인)
+목적지는 coockie_login.ok.jsp-->
+	<form action="cookie_login.ok.jsp">
+	<input type="text" name="id"/><br/>
+	<input type="password" name="pw"/><br/>
+	<input type="checkbox" name="login" value="로그인"/>
+	
+	</form>
+
+</body>
+</html>

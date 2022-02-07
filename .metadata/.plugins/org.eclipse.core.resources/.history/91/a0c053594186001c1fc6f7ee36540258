@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+   	String age= request.getParameter("age");
+    
+    int Age = Integer.parseInt(age);
+    
+    if(Age>=20){
+    	response.sendRedirect("test3.jsp");
+    }else{
+    	response.sendRedirect("test4.jsp");
+    }
+
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="test2.jsp" method="get">
+	<input type="text" name="apple" placeholder="apple"/><br/>
+	<input type="password" name="banana" placeholder="banana"/><br/>
+	취미:<input type="checkbox" name="hobby" value="요리">요리ㅋ&nbsp;
+	<input type="checkbox" name="hobby" value="요리">요리ㅋ&nbsp;
+	<input type="checkbox" name="hobby" value="요리">요리ㅋ&nbsp;
+	<input type="checkbox" name="hobby" value="요리">요리ㅋ&nbsp;
+	<input type="radio" name="major" value="호텔"/>호텔&nbsp;
+	<input type="radio" name="major" value="정통"/>정통&nbsp;
+	<input type="radio" name="major" value="경찰"/>경찰&nbsp;
+	<input type="radio" name="major" value="경영"/>경영&nbsp;
+	<input type="reset"/>
+	<input type="submit"/> 
+	</form>
+</body>
+</html>

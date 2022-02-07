@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <% 
+    String height = request.getParameter("height");
+    String weight = request.getParameter("weight");
+    
+    double cm = Double.parseDouble("height");
+    double kg = Double.parseDouble("weight");
+    %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>BMI 계산 어플리케이션</h1>
+	<hr/>
+	- 신장 : <%=height %>cm
+	- 체중 : <%=weight %>kg
+	<%if(bmi>23){ %>
+	out.println("고체중");
+	<%} else if(bmi<18.5){%>
+	out.println("저체중");
+	<%} else{%>
+	out.println("정상");
+	<%} %>
+</body>
+</html>
