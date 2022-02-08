@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+    String userId=(String)session.getAttribute("id_session");
+    out.println(userId+"<br/>");
+    
+    String name=(String)session.getAttribute("name_session");
+    out.println("name_session 삭제전: " +name+"<br/>");
+    
+    String jsp=(String)session.getAttribute("JSP");
+    out.println(jsp+"<br/>");
+    
+    int sTime=session.getMaxInactiveInterval();
+    out.println(sTime);
+    
+    session.invalidate();
+    
+    
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
