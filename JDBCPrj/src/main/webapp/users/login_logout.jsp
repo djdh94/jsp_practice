@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-   	String age= request.getParameter("age");
-    
-    
-    
-    response.sendRedirect("https://www.naver.com");
-    
+    session.invalidate();
+    response.sendRedirect("login_form.jsp");
     %>
 <!DOCTYPE html>
 <html>
@@ -15,6 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 </body>
 </html>

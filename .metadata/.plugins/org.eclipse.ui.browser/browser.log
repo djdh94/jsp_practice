@@ -71,3 +71,65 @@
 2월 11, 2022 22:41:49.939 [12424:8712:0211/224149.939:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
 2월 11, 2022 22:41:49.941 [12424:8712:0211/224149.941:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
 2월 11, 2022 22:41:49.951 [12424:2488:0211/224149.951:ERROR:device_event_log_impl.cc(214)] [22:41:49.951] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+
+2월 12, 2022 09:27:56.981 NEW SESSION
+2월 12, 2022 09:27:56.981 [11544:16268:0212/092756.979:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:27:57.04 [11544:16268:0212/092757.004:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:27:57.05 [11544:16268:0212/092757.004:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:27:57.07 [11544:16268:0212/092757.006:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:27:57.79 [11544:1256:0212/092757.079:ERROR:device_event_log_impl.cc(214)] [09:27:57.079] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:29:46.985 [14536:3796:0212/092946.985:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:29:46.986 [14536:3796:0212/092946.985:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:29:46.986 [14536:3796:0212/092946.985:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:29:46.988 [14536:3796:0212/092946.988:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:29:47.01 [14536:10232:0212/092947.000:ERROR:device_event_log_impl.cc(214)] [09:29:47.000] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:30:28.46 [11280:11420:0212/093028.046:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:30:28.47 [11280:11420:0212/093028.047:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:30:28.47 [11280:11420:0212/093028.047:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:30:28.50 [11280:11420:0212/093028.049:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:30:28.60 [11280:6764:0212/093028.060:ERROR:device_event_log_impl.cc(214)] [09:30:28.060] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:33:24.229 [15144:8488:0212/093324.229:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:33:24.229 [15144:8488:0212/093324.229:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:33:24.229 [15144:8488:0212/093324.229:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:33:24.233 [15144:8488:0212/093324.232:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:33:24.243 [15144:13748:0212/093324.243:ERROR:device_event_log_impl.cc(214)] [09:33:24.243] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:40:51.182 [13736:12232:0212/094051.182:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:40:51.182 [13736:12232:0212/094051.182:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:40:51.183 [13736:12232:0212/094051.182:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:40:51.188 [13736:12232:0212/094051.187:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:40:51.197 [13736:6428:0212/094051.197:ERROR:device_event_log_impl.cc(214)] [09:40:51.197] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:41:50.348 [13740:744:0212/094150.348:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:41:50.348 [13740:744:0212/094150.348:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:41:50.348 [13740:744:0212/094150.348:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:41:50.355 [13740:744:0212/094150.354:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:41:50.361 [13740:12576:0212/094150.360:ERROR:device_event_log_impl.cc(214)] [09:41:50.360] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:58:54.332 [9540:15224:0212/095854.332:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:58:54.336 [9540:15224:0212/095854.336:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:58:54.337 [9540:15224:0212/095854.337:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:58:54.341 [9540:15224:0212/095854.341:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:58:54.350 [9540:15024:0212/095854.349:ERROR:device_event_log_impl.cc(214)] [09:58:54.349] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 09:59:56.690 [16092:2300:0212/095956.689:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:59:56.690 [16092:2300:0212/095956.689:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 09:59:56.690 [16092:2300:0212/095956.689:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 09:59:56.694 [16092:2300:0212/095956.693:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 09:59:56.704 [16092:11188:0212/095956.703:ERROR:device_event_log_impl.cc(214)] [09:59:56.703] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 10:00:45.451 [9708:15888:0212/100045.451:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:00:45.451 [9708:15888:0212/100045.451:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 10:00:45.452 [9708:15888:0212/100045.451:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:00:45.455 [9708:15888:0212/100045.455:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 10:00:45.465 [9708:15488:0212/100045.464:ERROR:device_event_log_impl.cc(214)] [10:00:45.464] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 10:01:12.08 [4128:15440:0212/100112.008:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:01:12.09 [4128:15440:0212/100112.008:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 10:01:12.09 [4128:15440:0212/100112.008:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:01:12.11 [4128:15440:0212/100112.011:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 10:01:12.21 [4128:620:0212/100112.021:ERROR:device_event_log_impl.cc(214)] [10:01:12.021] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 10:04:44.873 [6660:1672:0212/100444.873:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:04:44.874 [6660:1672:0212/100444.873:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 10:04:44.874 [6660:1672:0212/100444.873:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:04:44.879 [6660:1672:0212/100444.879:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 10:04:44.887 [6660:15800:0212/100444.887:ERROR:device_event_log_impl.cc(214)] [10:04:44.886] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+2월 12, 2022 10:09:46.835 [11092:8376:0212/100946.835:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:09:46.835 [11092:8376:0212/100946.835:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 12, 2022 10:09:46.835 [11092:8376:0212/100946.835:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 12, 2022 10:09:46.837 [11092:8376:0212/100946.837:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 12, 2022 10:09:46.848 [11092:4604:0212/100946.848:ERROR:device_event_log_impl.cc(214)] [10:09:46.847] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
