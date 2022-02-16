@@ -47,9 +47,9 @@
 		// try진입전에 미리 선언해둬야 아래와 같이 .close()구문을 적을수있음
 		// 문제는 현재 이 구문에서 rs.next()가 rs.close를 한 이후에 배치되서
 		// 에러발생
-		con.close();
-		pmt.close();
-		rs.close();
+		//con.close();
+		//pmt.close();
+		//rs.close();
 	}
     
     

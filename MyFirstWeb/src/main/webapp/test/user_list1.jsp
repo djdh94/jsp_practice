@@ -9,12 +9,14 @@
    	String dbId="root";
    	String dbPw="mysql";
    	ResultSet rs = null;
+   	Connection con=null;
+   	PreparedStatement  pmt=null;
    	try{
    		Class.forName(dbType);
-   		Connection con = DriverManager.getConnection(dbUrl,dbId,dbPw);
+   		con = DriverManager.getConnection(dbUrl,dbId,dbPw);
    		
    		String sql = "select*from userinfo";
-   		PreparedStatement pmt = con.prepareStatement(sql);
+   		pmt = con.prepareStatement(sql);
    		
    		rs = pmt.executeQuery();
    		
@@ -27,6 +29,10 @@
    		
    	}catch(Exception e){
    		e.getStackTrace();
+   	}finally{
+   		//con.close();
+   		//pmt.close();
+   		//rs.close();
    	}
    	
    	
@@ -40,22 +46,25 @@
 </head>
 <body>
 	<table border="1">
+	<thead> 
 	<tr>
 	<th>유저이름</th>
 	<th>유저아이디</th>
 	<th>유저비번</th>
 	<th>유저이메일</th>
 	</tr>
-	
-	<%while(rs.next()){%>
+	</thead>
+	<tbody>
+	<% while(rs.next()){%>
+		
 	<tr>
-	<td><%=rs.getString("uname") %></td>
-	<td><%=rs.getString("uid") %></td>
-	<td><%=rs.getString("upw") %></td>
-	<td><%=rs.getString("uemail") %></td>
+	<td><%=rs.getString(1) %></td>
+	<td><%=rs.getString(2) %></td>
+	<td><%=rs.getString(3) %></td>
+	<td><%=rs.getBoolean(4) %></td>
 	</tr>
-	<%}%>
-	
+	<%} %>
+	</tbody>
 	</table>
 </body>
 </html>
