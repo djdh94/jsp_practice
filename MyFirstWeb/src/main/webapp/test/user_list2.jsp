@@ -9,7 +9,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    /*String dbType="com.mysql.cj.jdbc.Driver";
+   /* String dbType="com.mysql.cj.jdbc.Driver";
    	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
    	String dbId="root";
    	String dbPw="mysql";
@@ -44,6 +44,9 @@
    	Test dao = new Test();
    	List<UserVO> userList =dao.getAllUserList();
    	
+   	
+   	
+   	
     %>
 <!DOCTYPE html>
 <html>
@@ -52,28 +55,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1">
-<thead>
+
+	<table border="1">
+	<thead>
 	<tr>
-	<th>유저이름</th>
 	<th>유저아이디</th>
+	<th>유저이름</th>
 	<th>유저비번</th>
 	<th>유저이메일</th>
 	</tr>
 	</thead>
 	<tbody>
-	<%for(UserVO user:userList){%>
 	
-	<tr>
-	<td><%=user.getuName() %></td>
-	<td><%=user.getuId() %></td>
-	<td><%=user.getuPw() %></td>
-	<td><%=user.getuEmail() %></td>
-	</tr>
-
-	<%} %>
-	</tbody>	
-		</table>
-	
-</body>
+	 <% for(UserVO user: userList){%>
+	 <tr>
+	 <td><%=user.getuName() %></td>
+	 <td><%=user.getuId() %></td>
+	 <td><%=user.getuPw() %></td>
+	 <td><%=user.getuEmail() %></td>
+	 </tr>
+	 <% }%>
+	</tbody>
+	</table>
 </html>

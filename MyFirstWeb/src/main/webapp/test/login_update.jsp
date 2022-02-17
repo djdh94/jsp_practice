@@ -1,3 +1,7 @@
+<%@page import="kr.co.ict.Test3"%>
+<%@page import="kr.co.ict.UserDAO"%>
+<%@page import="kr.co.ict.UserVO"%>
+<%@page import="kr.co.ict.Test2"%>
 <%@page import="com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.sql.DriverManager"%>
@@ -6,15 +10,16 @@
     pageEncoding="UTF-8"%>
     <%
     String id = (String)session.getAttribute("session_id");
-    String dbType="com.mysql.cj.jdbc.Driver";
+    if(id==null){
+    	response.sendRedirect("login_form.jsp");
+    }
+
+    /*String dbType="com.mysql.cj.jdbc.Driver";
    	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
    	String dbId="root";
    	String dbPw="mysql";
     
     
-    if(id==null){
-    	response.sendRedirect("login_form.jsp");
-    }
     String uname=null;
     String uemail=null;
     try{
@@ -37,7 +42,12 @@
     	
     }catch(Exception e){
     	e.getStackTrace();
-    }
+    } */
+    
+   Test3 dao = new Test3();
+    UserVO user = dao.getUserDate(id);
+    out.println(user);
+ 
     
     
     
@@ -51,8 +61,8 @@
 <body>
 	<form action="update_check.jsp" method="post">
 	<input type="password" name="fpw" placeholder="패스워드"/><br/>
-	<input type="text" name="fname" placeholder="이름" value="<%=uname%>"/><br/>
-	<input type="email" name="femail" placeholder="이메일" value="<%=uemail%>"/><br/>
+	<input type="text" name="fname" placeholder="이름" value="<%=user.getuName()%>"/><br/>
+	<input type="email" name="femail" placeholder="이메일" value="<%=user.getuEmail()%>"/><br/>
 	<input type="submit" value="수정"/>
 	<input type="reset" value="초기화"/>
 	</form>

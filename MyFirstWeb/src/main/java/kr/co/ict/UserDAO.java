@@ -78,9 +78,48 @@ public class UserDAO {
 	// login_update.jsp의 경우 로그인한 유저 한 명의 데이터만 db에서 얻어옵니다.
 	// 따라서, 그 한 명의 유저 데이터만을 이용해 select구문을 써야합니다
 	// login_update.jsp 상단의 sId 변수에 들어있는 유저명을 이용해 유저데이터를 얻어옵니다.
-	public UserVO getUserDate(String sId) {
+	public UserVO getUserDate(String id) {
 		// 접속로직은 getAllUserList()와 큰 차이가 없고 쿼리문만 좀 다릅니다.
 		
-		return null; //db에서 uservo에 데이터를 받아주신 다음 null 대신 받아온 데이터를 리턴 
+		// 1.커넥션,프리페어드,리절트 변수선언
+		Connection con = null;
+		PreparedStatement pmt = null;
+		ResultSet rs = null;
+		UserVO user=null;
+		
+		// 2. db연결
+		try {
+			con = DriverManager.getConnection(dbUrl,dbId,dbPw);
+		
+		// 3. 쿼리문날려 rs에 db에서 가져온 정보 받기
+			String sql = "select*from userinfo where uid=?";
+			pmt = con.prepareStatement(sql);
+			pmt.setString(1, id);
+			rs=pmt.executeQuery();
+			
+		// 4. UserVO 변수를 선언해주시고 , rs에 저장된 데이터를 UserVO에 담습니다.
+			
+			if(rs.next()) {
+				String fname=rs.getString("uname");
+				String fid=rs.getString("uid");
+				String fpw=rs.getString("upw");
+				String femail=rs.getString("uemail");
+				user= new UserVO(fname,fid,fpw,femail);
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+			con.close();
+			pmt.close();
+			rs.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		return user; //db에서 uservo에 데이터를 받아주신 다음 null 대신 받아온 데이터를 리턴 
 	}
 }

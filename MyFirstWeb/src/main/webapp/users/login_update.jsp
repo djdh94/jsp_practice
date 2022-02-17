@@ -1,3 +1,5 @@
+<%@page import="kr.co.ict.UserVO"%>
+<%@page import="kr.co.ict.UserDAO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -12,7 +14,7 @@
     }
     // 2. db연결
     
-     String dbType="com.mysql.cj.jdbc.Driver";
+    /* String dbType="com.mysql.cj.jdbc.Driver";
 	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
 	String dbId="root";
 	String dbPw="mysql";
@@ -47,7 +49,18 @@
 		e.getStackTrace();
 	}finally{
 		
-	}
+	}*/
+	
+	// 5. form의 value에 해당 변수에 든 값이 들어가도록 설정
+	
+	// DAO를 활용한 로직으로 전환
+	// 1. DAO 생성
+	UserDAO dao = new UserDAO();
+	// 2. DAO내부에서 회원 1명의 정보만 가져오는 getUserData 호출
+	UserVO user=dao.getUserDate(id); //id 는 이미 세션에서 얻어옴
+	// 3. 얻어온 user내용물 확인
+	out.println(user+"<br/>"); // UserVO에 tostring메서드가 있어서 내용물이 출력
+	// 4. user 내용물을 아래쪾 표현식에 getter로 집어넣어주기
     %>
     
 <!DOCTYPE html>
@@ -66,12 +79,12 @@
 	input 태그에서 value 속성을 이용하면 미리 채워질 값을 지정할수있음 -->
 	<form action="update_check.jsp" method="post">
 	<input type="password" name="fpw" placeholder="패스워드" /><br/>
-	<input type="text" name="fname" placeholder="이름" value="<%=tname%>"/><br/>
-	<input type="email" name="femail" placeholder="이메일" value="<%=temail%>"/><br/>
+	<input type="text" name="fname" placeholder="이름" value="<%=user.getuName()%>"/><br/>
+	<input type="email" name="femail" placeholder="이메일" value="<%=user.getuEmail()%>"/><br/>
 	<input type="submit" value="수정"/>
 	<input type="reset" value="초기화"/>
 	
-	
+
 	</form>
 </body>
 </html>
