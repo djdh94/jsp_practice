@@ -78,7 +78,7 @@ public class UserDAO {
 	// login_update.jsp의 경우 로그인한 유저 한 명의 데이터만 db에서 얻어옵니다.
 	// 따라서, 그 한 명의 유저 데이터만을 이용해 select구문을 써야합니다
 	// login_update.jsp 상단의 sId 변수에 들어있는 유저명을 이용해 유저데이터를 얻어옵니다.
-	public UserVO getUserDate(String id) {
+	public UserVO getUserData(String id) {
 		// 접속로직은 getAllUserList()와 큰 차이가 없고 쿼리문만 좀 다릅니다.
 		
 		// 1.커넥션,프리페어드,리절트 변수선언

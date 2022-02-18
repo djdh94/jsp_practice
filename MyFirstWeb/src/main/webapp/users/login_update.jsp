@@ -57,7 +57,7 @@
 	// 1. DAO 생성
 	UserDAO dao = new UserDAO();
 	// 2. DAO내부에서 회원 1명의 정보만 가져오는 getUserData 호출
-	UserVO user=dao.getUserDate(id); //id 는 이미 세션에서 얻어옴
+	UserVO user=dao.getUserData(id); //id 는 이미 세션에서 얻어옴
 	// 3. 얻어온 user내용물 확인
 	out.println(user+"<br/>"); // UserVO에 tostring메서드가 있어서 내용물이 출력
 	// 4. user 내용물을 아래쪾 표현식에 getter로 집어넣어주기
