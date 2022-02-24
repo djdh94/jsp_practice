@@ -1,3 +1,5 @@
+<%@page import="kr.co.ict.UserVO"%>
+<%@page import="kr.co.ict.UserDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -16,7 +18,7 @@
     	response.sendRedirect("login_form.jsp");
     }
     // 3. DB접속정보 변수로 관리
-    String dbType="com.mysql.cj.jdbc.Driver";
+   /* String dbType="com.mysql.cj.jdbc.Driver";
 	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
 	String dbId="root";
 	String dbPw="mysql";
@@ -38,9 +40,10 @@
     	pmt.close();
     }catch(Exception e){
     	e.getStackTrace();
-    }
+    }*/
     
-    		
+   	UserDAO dao = new UserDAO();
+    dao.userUpdate(id, pw, name, email);
     
 	 // 7.body태그에 xxx회원의 정보가 수정되었습니다. 라고 안내하고
     // 웰컴페이지로 돌아갈수있는 링크 넣기

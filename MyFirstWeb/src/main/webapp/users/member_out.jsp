@@ -1,3 +1,4 @@
+<%@page import="kr.co.ict.UserDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -10,7 +11,7 @@
 		
 	    response.sendRedirect("login_form.jsp");	
 	    }
-    String dbType="com.mysql.cj.jdbc.Driver";
+   /* String dbType="com.mysql.cj.jdbc.Driver";
 	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
 	String dbId="root";
 	String dbPw="mysql";
@@ -30,7 +31,10 @@
 	}finally{
 		session.invalidate();
 		// response.sendredirect("login_form.jsp") //로그인창으로 돌려보내기
-	}
+	}*/
+	UserDAO dao = new UserDAO();
+	dao.deleteUser(id);
+	session.invalidate();
     %>
 <!DOCTYPE html>
 <html>

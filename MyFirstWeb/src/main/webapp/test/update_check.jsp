@@ -1,3 +1,4 @@
+<%@page import="kr.co.ict.UserDAO"%>
 <%@page import="com.mysql.cj.xdevapi.PreparableStatement"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,7 +11,7 @@
     
     String id = (String)session.getAttribute("session_id");
     
-    String dbType="com.mysql.cj.jdbc.Driver";
+    /*String dbType="com.mysql.cj.jdbc.Driver";
    	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
    	String dbId="root";
    	String dbPw="mysql";
@@ -41,7 +42,9 @@
    		con.close();
    		pmt.close();
    		
-   	}
+   	}*/
+   	UserDAO dao = new UserDAO();
+   	
     %>
 <!DOCTYPE html>
 <html>

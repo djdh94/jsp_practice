@@ -1,3 +1,4 @@
+<%@page import="kr.co.ict.UserDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -5,16 +6,18 @@
     pageEncoding="UTF-8"%>
     
     <%
-    String dbType="com.mysql.cj.jdbc.Driver";
-	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
-	String dbId="root";
-	String dbPw="mysql";
-    request.setCharacterEncoding("utf-8");
-    // 폼에서 날려준 데이터를 받아 변수에 저장
     String id = request.getParameter("fid");
     String pw = request.getParameter("fpw");
     String name = request.getParameter("fname");
     String email = request.getParameter("femail");
+    request.setCharacterEncoding("utf-8");
+   /* String dbType="com.mysql.cj.jdbc.Driver";
+	String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
+	String dbId="root";
+	String dbPw="mysql";
+    
+    // 폼에서 날려준 데이터를 받아 변수에 저장
+    
     
     // 위의 사용자가 입력한 데이터를 토대로
     // 스크립트릿 내부에서 db연동을 한다음 insert 구문을 실행하도록
@@ -46,7 +49,9 @@
     	e.getStackTrace();
     }finally{
     	out.println("회원가입 완료");
-    }
+    }*/
+    UserDAO dao = new UserDAO();
+    dao.insertUser(name, id, pw, email);
     %>
 <!DOCTYPE html>
 <html>

@@ -122,4 +122,90 @@ public class UserDAO {
 		
 		return user; //db에서 uservo에 데이터를 받아주신 다음 null 대신 받아온 데이터를 리턴 
 	}
+	public void userUpdate(String id,String pw,String name,String email) {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		try {
+			con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			String sql="update userinfo set uname=?,upw=?,uemail=? where uid=?";
+			pmt=con.prepareStatement(sql);
+			pmt.setString(1, name);
+			pmt.setString(2, pw);
+			pmt.setString(3, email);
+			pmt.setString(4, id);
+			pmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				pmt.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	// updateCheck에 필요한 userUpdate메서드를 아래에 정의해주세요
+	// update구문을 실행하기 때문에 리턴 자료가 필요없고
+	// update_check.jsp에 있는 쿼리문을 실행하기 위해
+	// id,pw,name,email정보를 모두 받아옵니다.
+	
+	
+	
+	// member_out.jsp에서 사용할 탈퇴기능을 DAO로 이전시키겟습니다.
+	// 메서드명은 deleteUser(String sId)입니다.
+	// DAO파일에 생성하신 후, member_out.jsp에서도 해당 메서드를 쓰도록 고치기
+	// 1. DAO에 메서드 생성후 보내기
+	// 2. 고친로직을 실행하는 member_out.jsp의 스크립트릿도 추가로 보내기
+	public void deleteUser(String sId) {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		try {
+			con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			String sql="delete from userinfo where uid=?";
+			pmt=con.prepareStatement(sql);
+			pmt.setString(1, sId);
+			pmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+			con.close();
+			pmt.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	// 회원가입 로직 insertUser처리
+	public void insertUser(String name, String id, String pw, String email) {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		
+		try {
+			con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			String sql="insert into userinfo values(?,?,?,?)";
+			pmt=con.prepareStatement(sql);
+			pmt.setString(1, id);
+			pmt.setString(2, name);
+			pmt.setString(3, pw);
+			pmt.setString(4, email);
+			pmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+				pmt.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
+			
+	
+	
