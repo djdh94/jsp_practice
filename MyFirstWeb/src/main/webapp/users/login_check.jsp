@@ -34,7 +34,7 @@
 		// 3. 쿼리문 실행 결과 ResultSet에 받기
 		ResultSet rs = pstmt.executeQuery();*/
 		
-		UserDAO dao = new UserDAO();
+		UserDAO dao = UserDAO.getInstance();
 		UserVO user = dao.getUserData(fId);
 		
 		// 4. 사용자 입력 id기준으로 들어온 데이터가 있다면, (fId.equals(DB내에 저장된 ID)로 검사 가능)

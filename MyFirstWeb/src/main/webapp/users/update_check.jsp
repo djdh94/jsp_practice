@@ -42,7 +42,7 @@
     	e.getStackTrace();
     }*/
     
-   	UserDAO dao = new UserDAO();
+   	UserDAO dao = UserDAO.getInstance();
     dao.userUpdate(id, pw, name, email);
     
 	 // 7.body태그에 xxx회원의 정보가 수정되었습니다. 라고 안내하고

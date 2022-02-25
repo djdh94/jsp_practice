@@ -55,7 +55,7 @@
 	
 	// DAO를 활용한 로직으로 전환
 	// 1. DAO 생성
-	UserDAO dao = new UserDAO();
+	UserDAO dao = UserDAO.getInstance();
 	// 2. DAO내부에서 회원 1명의 정보만 가져오는 getUserData 호출
 	UserVO user=dao.getUserData(id); //id 는 이미 세션에서 얻어옴
 	// 3. 얻어온 user내용물 확인

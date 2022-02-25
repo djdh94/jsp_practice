@@ -32,7 +32,7 @@
 		session.invalidate();
 		// response.sendredirect("login_form.jsp") //로그인창으로 돌려보내기
 	}*/
-	UserDAO dao = new UserDAO();
+	UserDAO dao = UserDAO.getInstance();
 	dao.deleteUser(id);
 	session.invalidate();
     %>
@@ -44,5 +44,6 @@
 </head>
 <body>
 	<%=id %> 탈퇴가 완료 되었습니다.
+	<a href="login_form.jsp">로그인창으로 이동</a>
 </body>
 </html>
