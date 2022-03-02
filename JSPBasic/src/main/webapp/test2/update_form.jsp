@@ -1,3 +1,5 @@
+<%@page import="kr.co.ict.UserVO2"%>
+<%@page import="kr.co.ict.UserDAO2"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -10,7 +12,7 @@
     if(id==null){
     	response.sendRedirect("login_form.jsp");
     }
-   String dbType="com.mysql.cj.jdbc.Driver";
+  /* String dbType="com.mysql.cj.jdbc.Driver";
    String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
    String dbId="root";
    String dbPw="mysql";
@@ -34,7 +36,9 @@
 	   }
    }catch(Exception e){
 	   e.printStackTrace();
-   }
+   }*/
+	UserDAO2 dao = new UserDAO2();
+   UserVO2 user=dao.getUpdatetest(id);
     %>
 <!DOCTYPE html>
 <html>
@@ -44,9 +48,9 @@
 </head>
 <body>
 <form action="update_check.jsp" method="post">
-<input type="text" name="fname" value="<%=fname %>"/><br/>
-<input type="text" name="fid" value="<%=fid %>"/><br/>
-<input type="email" name="femail" value="<%=femail %>"/><br/>
+<input type="text" name="fname" value="<%=user.getuName()%>"/><br/>
+<input type="text" name="fid" value="<%=user.getuId() %>"/><br/>
+<input type="email" name="femail" value="<%=user.getuEmail() %>"/><br/>
 <input type="password" name="fpw" placeholder="패스워드"/><br/>
 <input type="submit" value="정보수정"/>
 <input type="reset" value="초기화"/>

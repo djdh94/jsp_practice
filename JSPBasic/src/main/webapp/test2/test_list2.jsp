@@ -1,5 +1,6 @@
-<%@page import="kr.co.ict.UserDAO"%>
-<%@page import="kr.co.ict.UserVO"%>
+<%@page import="kr.co.ict.UserDAO2"%>
+<%@page import="kr.co.ict.UserDAO2"%>
+<%@page import="kr.co.ict.UserVO2"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.*"%>
@@ -35,8 +36,9 @@
     	pmt.close();
     	rs.close();
     }*/
-    UserDAO dao = new UserDAO();
-    List<UserVO> userList = dao.getAllUserList();
+  	UserDAO2 dao = new UserDAO2();
+    List<UserVO2> UserList = dao.getAlltest();
+    
     %>
 <!DOCTYPE html>
 <html>
@@ -55,12 +57,12 @@
 	</tr>
 	</thead>
 	<tbody>
-	<%for(UserVO user : userList){ %>
+	<%for(UserVO2 user : UserList){ %>
 	<tr>
-	<td><%=user.getName() %></td>
-	<td><%=user.getId() %></td>
-	<td><%=user.getPw() %></td>
-	<td><%=user.getEmail() %></td>
+	<td><%=user.getuName() %></td>
+	<td><%=user.getuId()%></td>
+	<td><%=user.getuPw() %></td>
+	<td><%=user.getuEmail() %></td>
 	</tr>
 	<%} %>
 	</tbody>

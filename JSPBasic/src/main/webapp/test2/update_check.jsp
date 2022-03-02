@@ -1,3 +1,4 @@
+<%@page import="kr.co.ict.UserDAO2"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -12,7 +13,7 @@
 	if(id==null){
 		response.sendRedirect("login_form.jsp");
 	}
-   String dbType="com.mysql.cj.jdbc.Driver";
+   /*String dbType="com.mysql.cj.jdbc.Driver";
    String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
    String dbId="root";
    String dbPw="mysql";
@@ -30,7 +31,9 @@
 	   pmt.executeUpdate();
    }catch(Exception e){
 	e.printStackTrace();
-   }
+   }*/
+   UserDAO2 dao = new UserDAO2();
+   dao.updateCheck(name, pw, email, id);
     %>
 <!DOCTYPE html>
 <html>

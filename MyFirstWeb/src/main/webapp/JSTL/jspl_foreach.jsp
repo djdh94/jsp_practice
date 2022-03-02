@@ -26,9 +26,29 @@ for(int i=1; i<101; i++){
 <c:forEach begin="2" end="9" var="dan">
 <hr/>
 <c:forEach begin="1" end="9" var="i">
-${dan}*${i}=${dan*i}<br/>
+<c:out value="${dan}*${i}=${dan*i}"/><br/>
 </c:forEach>
 </c:forEach>
+<hr/>
+<h1>숫자가 아닌 요소를 반복하는 jstl</h1>
+<%-- arr 변수 내에 과일 5개이름을 배열로 저장하는 구문 --%>
+<c:set var="arr" value='<%= new String[] {"사과","딸기","망고","포도"}%>'/>
+<%--c:foreach는 향상된 for문처럼 쓸 수도 있습니다 --%>
+<c:forEach var="i" items="${arr }">
+${i} &nbsp;<br/>
+</c:forEach>
+<%--
+String[] arr= {"사과","딸기","망고","포도"};
+for(int i:arr){
+out.println(i+"&nbsp;");
+}
+ --%>
+ <!-- int 배열에 10,20,30,40,50을 넣고
+ c:foreach문을 이용해 화면에 출력하기 변수명은 마음대로 -->
+ <c:set var="test" value='<%=new int[] {10,20,30,40,50} %>'/>
+ <c:forEach var="t" items="${test }">
+ ${t} &nbsp;
+ </c:forEach>
 
 
 

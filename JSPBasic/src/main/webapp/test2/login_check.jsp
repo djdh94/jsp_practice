@@ -1,3 +1,5 @@
+<%@page import="kr.co.ict.UserVO2"%>
+<%@page import="kr.co.ict.UserDAO2"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -13,8 +15,7 @@
     if(id==null){
     	response.sendRedirect("login_form.jsp");
     }
-
-   String dbType="com.mysql.cj.jdbc.Driver";
+   /*String dbType="com.mysql.cj.jdbc.Driver";
    String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
    String dbId="root";
    String dbPw="mysql";
@@ -27,21 +28,26 @@
 	   String sql="select*from userinfo where uid=?";
 	   pmt=con.prepareStatement(sql);
 	   pmt.setString(1,id);
-	   rs=pmt.executeQuery();
-	   if(rs.next()){
-		   String uid=rs.getString("uid");
-		   String upw=rs.getString("upw");
-		   if(pw.equals(upw)){
-			   session.setAttribute("session_id", uid);
-			   session.setAttribute("session_pw", upw);
+	   rs=pmt.executeQuery();*/ 
+	   UserDAO2 dao = new UserDAO2();
+	   UserVO2 user= dao.getUpdatetest(id);
+	   
+	   if(user!=null){
+	   //String uid=user.getuId();
+	   //String upw=user.getuPw();
+		   //String uid=rs.getString("uid");
+		   //String upw=rs.getString("upw");
+		   if(id.equals(user.getuId())&& pw.equals(user.getuPw())){
+			   session.setAttribute("session_id", user.getuId());
+			   session.setAttribute("session_pw", user.getuPw());
 			   response.sendRedirect("login_welcome.jsp");
+		   }else{
+			   out.println("비밀번호가 틀렸습니디");
 		   }
 	   }else{
 		   out.println("아이디가 틀렸습니다");
 	   }
-   }catch(Exception e){
-	   e.printStackTrace();
-   }
+   
     %>
 <!DOCTYPE html>
 <html>
