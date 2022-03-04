@@ -7,19 +7,40 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO2 {
-	   private String dbType="com.mysql.cj.jdbc.Driver";
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+ public class UserDAO2 {
+	   /*private String dbType="com.mysql.cj.jdbc.Driver";
 	   private String dbUrl="jdbc:mysql://localhost:3306/jdbcprac1";
 	   private String dbId="root";
-	   private String dbPw="mysql";
+	   private String dbPw="mysql";*/
+	   private DataSource ds =null;
 	   
-	   public UserDAO2(){
+	  /* public UserDAO2(){
 		   try {
 			   Class.forName(dbType);
 		   }catch(Exception e) {
 			   e.printStackTrace();
 		   }
-	   }
+	   }*/
+	   private static UserDAO2 dao = new UserDAO2();
+	  private UserDAO2() {
+		  try {
+			  Context ct = new InitialContext();
+			  ds = (DataSource)ct.lookup("java:comp/env/jdbc/mysql");
+		  }catch(Exception e) {
+			  e.printStackTrace();
+		  }
+	  }
+	  public static UserDAO2 getInstance() {
+		  if(dao==null) {
+			  dao=new UserDAO2();
+		  }
+		  return dao;
+	  }
+	   
 	   
 	   public List<UserVO2> getAlltest(){
 		   Connection con = null;
@@ -27,7 +48,7 @@ public class UserDAO2 {
 		   ResultSet rs=null;
 		   List<UserVO2> userList = new ArrayList<>();
 		   try {
-			   con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			  con=ds.getConnection();
 			   String sql="select*from userinfo";
 			   pmt=con.prepareStatement(sql);
 			   rs=pmt.executeQuery();
@@ -59,7 +80,7 @@ public class UserDAO2 {
 		   ResultSet rs=null;
 		   UserVO2 user =null;
 		   try {
-			   con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			   con=ds.getConnection();
 			   String sql="select*from userinfo where uid=?";
 			   pmt=con.prepareStatement(sql);
 			   pmt.setString(1, fid);
@@ -88,7 +109,7 @@ public class UserDAO2 {
 		   PreparedStatement pmt=null;
 		   
 		   try {
-			   con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			   con=ds.getConnection();
 			   String sql="update userinfo set uname=?,upw=?,uemail=? where uid=?";
 			   pmt=con.prepareStatement(sql);
 			   pmt.setString(1, name);
@@ -113,7 +134,7 @@ public class UserDAO2 {
 		  Connection con =null;
 		  PreparedStatement pmt=null;
 		  try {
-			  con=DriverManager.getConnection(dbUrl,dbId,dbPw);
+			  con=ds.getConnection();
 			  String sql="delete from userinfo where uid=?";
 			  pmt=con.prepareStatement(sql);
 			  pmt.setString(1, id);
@@ -129,6 +150,29 @@ public class UserDAO2 {
 				 e.printStackTrace();
 			 }
 			  
+		  }
+	  }
+	  public void insertUser(String fname,String fid,String fpw,String femail) {
+		  Connection con=null;
+		  PreparedStatement pmt=null;
+		  try {
+			  con=ds.getConnection();
+			  String sql="insert into userinfo values(?,?,?,?)";
+			  pmt=con.prepareStatement(sql);
+			  pmt.setString(1, fname);
+			  pmt.setString(2, fid);
+			  pmt.setString(3, fpw);
+			  pmt.setString(4, femail);
+			  pmt.executeUpdate();
+		  }catch(Exception e) {
+			  e.printStackTrace();
+		  }finally {
+			  try {
+				  con.close();
+				  pmt.close();
+			  }catch(Exception e) {
+				  e.printStackTrace();
+			  }
 		  }
 	  }
 }

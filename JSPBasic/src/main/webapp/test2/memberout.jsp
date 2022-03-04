@@ -34,6 +34,7 @@
     UserDAO2 dao = new UserDAO2();
     dao.deleteUser(id);
     session.invalidate();
+    response.sendRedirect("login_form.jsp");
 	%>
 <!DOCTYPE html>
 <html>
@@ -43,5 +44,6 @@
 </head>
 <body>
 	<h1>회원탈퇴 완료</h1>
+	
 </body>
 </html>

@@ -1,7 +1,6 @@
 package kr.co.ict;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -220,8 +219,8 @@ public class UserDAO {
 			con=ds.getConnection();
 			String sql="insert into userinfo values(?,?,?,?)";
 			pmt=con.prepareStatement(sql);
-			pmt.setString(1, id);
-			pmt.setString(2, name);
+			pmt.setString(1, name);
+			pmt.setString(2, id);
 			pmt.setString(3, pw);
 			pmt.setString(4, email);
 			pmt.executeUpdate();
