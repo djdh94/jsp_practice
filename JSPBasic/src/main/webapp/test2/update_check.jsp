@@ -32,7 +32,7 @@
    }catch(Exception e){
 	e.printStackTrace();
    }*/
-   UserDAO2 dao = new UserDAO2();
+   UserDAO2 dao = UserDAO2.getInstance();
    dao.updateCheck(name, pw, email, id);
     %>
 <!DOCTYPE html>

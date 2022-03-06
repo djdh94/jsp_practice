@@ -29,7 +29,7 @@
 	   pmt=con.prepareStatement(sql);
 	   pmt.setString(1,id);
 	   rs=pmt.executeQuery();*/ 
-	   UserDAO2 dao = new UserDAO2();
+	   UserDAO2 dao = UserDAO2.getInstance();
 	   UserVO2 user= dao.getUpdatetest(id);
 	   
 	   if(user!=null){
