@@ -36,7 +36,7 @@
     	pmt.close();
     	rs.close();
     }*/
-  	UserDAO2 dao = new UserDAO2();
+  	UserDAO2 dao = UserDAO2.getInstance();
     List<UserVO2> UserList = dao.getAlltest();
     
     %>

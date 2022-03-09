@@ -31,7 +31,7 @@
     	pmt.close();
     	session.invalidate();
     }*/
-    UserDAO2 dao = new UserDAO2();
+    UserDAO2 dao = UserDAO2.getInstance();
     dao.deleteUser(id);
     session.invalidate();
     response.sendRedirect("login_form.jsp");
