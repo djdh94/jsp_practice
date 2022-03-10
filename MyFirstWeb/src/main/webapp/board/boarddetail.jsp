@@ -13,7 +13,15 @@
 조회수:${board.hit }<br/>
 날짜:<input type="text" value="${board.bdate }" readonly>
 마지막 수정날짜:${board.mdate }<br/>
-본문:<textarea rows="15" cols="50">${board.content }</textarea><br/>
-<a href="http://localhost:8181/MyFirstWeb/boardlist">목록으로</a>
+본문:<textarea rows="15" cols="50" readonly>${board.content }</textarea><br/>
+<a href="http://localhost:8181/MyFirstWeb/boardList">목록으로</a>
+<form action="http://localhost:8181/MyFirstWeb/boardDelete" method="post">
+<input type="hidden" value="${board.board_num }" name="board_num"/> 
+<input type="submit" value="삭제하기"/><br/>
+</form>
+<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm" method="post">
+<input type="hidden" value="${board.board_num }" name="board_num"/>
+<input type="submit" value="수정하기"/>
+</form>
 </body>
 </html>

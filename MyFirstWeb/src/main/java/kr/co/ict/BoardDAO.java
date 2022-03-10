@@ -138,4 +138,49 @@ public class BoardDAO {
 		}
 		return board;
 	}
+	
+	public void getBoardDelete(int boardnum) {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		try {
+			con=ds.getConnection();
+			String sql="delete from boardinfo where board_num=?";
+			pmt=con.prepareStatement(sql);
+			pmt.setInt(1, boardnum);
+			pmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				pmt.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void getBoardUpdate(String title,String content,int boardNum) {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		try {
+			con=ds.getConnection();
+			String sql="update boardinfo set title=?, content=?, mdate=now() where board_num=?";
+			pmt=con.prepareStatement(sql);
+			pmt.setString(1, title);
+			pmt.setString(2, content);
+			pmt.setInt(3, boardNum);
+			pmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				pmt.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 }

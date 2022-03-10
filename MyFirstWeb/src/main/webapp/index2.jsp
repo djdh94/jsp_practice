@@ -12,5 +12,6 @@
 <h2>이 페이지가 메인페이지로 자동 설정됩니다.</h2>
 <h2>welcomepage 설정을 고쳐서 index.jsp가 아닌</h2>
 <h2>다은 임의의 명칭을 메인페이지로 만들어줄수도 있습니다.</h2>
+<a href="http://localhost:8181/MyFirstWeb/boardList">게시판이동</a>
 </body>
 </html>

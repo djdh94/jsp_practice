@@ -14,13 +14,13 @@ import kr.co.ict.UserDAO;
  * Servlet implementation class InsertBoardServlet
  */
 @WebServlet("/insertBoard")
-public class InsertBoardServlet extends HttpServlet {
+public class BoardInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertBoardServlet() {
+    public BoardInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
