@@ -5,8 +5,8 @@ import java.sql.Date;
 public class BoardVO {
 	private int board_num;
 	private String title;
-	private String content;
-	private String writer;
+	private String  content;
+	private String  writer;
 	private Date bdate;
 	private Date mdate;
 	private int hit;
@@ -67,6 +67,6 @@ public class BoardVO {
 		return "BoardVO [board_num=" + board_num + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ ", bdate=" + bdate + ", mdate=" + mdate + ", hit=" + hit + "]";
 	}
-
+	
 	
 }

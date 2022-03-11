@@ -9,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.co.ict.BoardDAO;
-import kr.co.ict.BoardVO;
-
 /**
- * Servlet implementation class BoardDetail
+ * Servlet implementation class BoardInsertFormServleT
  */
-@WebServlet("/boarddetail")
-public class BoardDetail extends HttpServlet {
+@WebServlet("/boardInsertForM")
+public class BoardInsertFormServleT extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardDetail() {
+    public BoardInsertFormServleT() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,15 +28,8 @@ public class BoardDetail extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String snum=request.getParameter("board_num");
-		int bnum=Integer.parseInt(snum);
-		BoardDAO dao = BoardDAO.getInstance();
-		BoardVO board = dao.getDetail(bnum);
-		System.out.println(board);
-		request.setAttribute("board", board);
-		RequestDispatcher dp = request.getRequestDispatcher("/board/boardDetail.jsp");
+		RequestDispatcher dp = request.getRequestDispatcher("/board/boardform.jsp");
 		dp.forward(request, response);
-		
 	}
 
 }

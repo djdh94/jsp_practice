@@ -1,6 +1,8 @@
 package kr.co.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,18 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.co.ict.BoardDAO;
+import kr.co.ict.BoardVO;
 
 /**
- * Servlet implementation class BoardUpdateForm
+ * Servlet implementation class BoardUpdateServleT
  */
-@WebServlet("/boardUpdateForm")
-public class BoardUpdateForm extends HttpServlet {
+@WebServlet("/boardUpdatE")
+public class BoardUpdateServleT extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardUpdateForm() {
+    public BoardUpdateServleT() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,15 +31,13 @@ public class BoardUpdateForm extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.setCharacterEncoding("utf-8");
-	String snum=request.getParameter("board_num");
-	int bnum=Integer.parseInt(snum);
-	String title =request.getParameter("title");
-	String content=request.getParameter("content");
-	BoardDAO dao = BoardDAO.getInstance();
-	dao.getUpdate(title, content, bnum);
-	response.sendRedirect("http://localhost:8181/JSPBasic/boardList");
-	
+		String snum= request.getParameter("board_num");
+		int bnum = Integer.parseInt(snum);
+		BoardDAO dao = BoardDAO.getInstance();
+		BoardVO board = dao.getDetail(bnum);
+		request.setAttribute("board", board);
+		RequestDispatcher dp = request.getRequestDispatcher("/board/boardUpdate.jsp");
+		dp.forward(request, response);
 	}
 
 }

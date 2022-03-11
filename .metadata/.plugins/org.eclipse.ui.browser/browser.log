@@ -349,3 +349,7 @@
 2월 24, 2022 20:13:54.656 [1640:14844:0224/201354.653:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
 2월 24, 2022 20:13:54.660 [1640:14844:0224/201354.660:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
 2월 24, 2022 20:13:54.670 [1640:13404:0224/201354.669:ERROR:device_event_log_impl.cc(214)] [20:13:54.669] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+
+3월 11, 2022 17:34:10.422 NEW SESSION
+3월 11, 2022 17:34:10.422 [5060:704:0311/173410.419:ERROR:device_event_log_impl.cc(214)] [17:34:10.418] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+3월 11, 2022 17:48:52.474 [9488:5300:0311/174852.474:ERROR:device_event_log_impl.cc(214)] [17:48:52.474] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.

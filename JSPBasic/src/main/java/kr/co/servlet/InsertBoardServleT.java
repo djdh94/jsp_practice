@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.ict.BoardDAO;
 
 /**
- * Servlet implementation class BoardDelete
+ * Servlet implementation class InsertBoardServleT
  */
-@WebServlet("/boarddelete")
-public class BoardDelete extends HttpServlet {
+@WebServlet("/insertBoarD")
+public class InsertBoardServleT extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardDelete() {
+    public InsertBoardServleT() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,11 +28,14 @@ public class BoardDelete extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String snum=request.getParameter("board_num");
-		int bnum=Integer.parseInt(snum);
+		request.setCharacterEncoding("utf-8");
 		BoardDAO dao = BoardDAO.getInstance();
-		dao.getDelete(bnum);
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		String writer = request.getParameter("writer");
+		dao.getInsert(title, content, writer);
 		response.sendRedirect("http://localhost:8181/JSPBasic/boardlist");
+		
 	}
 
 }

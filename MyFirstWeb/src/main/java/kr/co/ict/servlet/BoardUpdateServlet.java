@@ -30,12 +30,13 @@ public class BoardUpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String snum = request.getParameter("board_num");
-		int bnum = Integer.parseInt(snum);
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
+		int bnum = Integer.parseInt(snum);
+		
 		BoardDAO dao = BoardDAO.getInstance();
 		dao.getBoardUpdate(title, content, bnum);
-		response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList");
+		response.sendRedirect("http://localhost:8181/MyFirstWeb/boarddetail?board_num="+bnum);
 		
 		
 		

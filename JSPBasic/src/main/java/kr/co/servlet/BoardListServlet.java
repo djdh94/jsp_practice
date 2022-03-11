@@ -14,16 +14,16 @@ import kr.co.ict.BoardDAO;
 import kr.co.ict.BoardVO;
 
 /**
- * Servlet implementation class BoardList
+ * Servlet implementation class BoardListServlet
  */
-@WebServlet("/boardList")
-public class BoardList extends HttpServlet {
+@WebServlet("/boardlist")
+public class BoardListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardList() {
+    public BoardListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,10 +33,11 @@ public class BoardList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDAO dao = BoardDAO.getInstance();
-		List<BoardVO> boardList = dao.getAllBoardList();
+		List<BoardVO> boardList = dao.getAllboardList();
 		request.setAttribute("boardList", boardList);
 		RequestDispatcher dp = request.getRequestDispatcher("/board/boardList.jsp");
 		dp.forward(request, response);
+		
 		
 	}
 

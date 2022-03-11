@@ -34,6 +34,6 @@
 			
 		</c:forEach>
 	</table>
-
+<a href="http://localhost:8181/MyFirstWeb/boardInsertForm"><button>글쓰기</button></a>
 </body>
 </html>
