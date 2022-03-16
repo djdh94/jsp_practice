@@ -34,6 +34,8 @@
 			
 		</c:forEach>
 	</table>
+	<c:if test="${sessionScope.session_id ne null }">
 <a href="http://localhost:8181/MyFirstWeb/boardInsertForm.do"><button>글쓰기</button></a>
+</c:if>
 </body>
 </html>

@@ -13,6 +13,7 @@ import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
 
 import kr.co.ict.servlet.service.BoardDeleteService;
 import kr.co.ict.servlet.service.BoardDetailService;
+import kr.co.ict.servlet.service.BoardInsertFormService;
 import kr.co.ict.servlet.service.BoardInsertService;
 import kr.co.ict.servlet.service.BoardListService;
 import kr.co.ict.servlet.service.BoardUpdateFormService;
@@ -68,6 +69,8 @@ public class FrontController extends HttpServlet {
 			sv.execute(request, response); // BoardListService의 execute는 게시글 목록을 가져옴
 			ui="/board/boardlist.jsp"; // 포워딩 주소를 ui에 저장함
 		}else if(uri.equals("/MyFirstWeb/boardInsertForm.do")) {
+			sv= new BoardInsertFormService();
+			sv.execute(request, response);
 			ui="/board/boardform.jsp";
 		}
 		else if(uri.equals("/MyFirstWeb/boarddetail.do")) {
