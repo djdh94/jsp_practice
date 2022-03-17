@@ -122,8 +122,9 @@ public class BoardDAO {
 				Date bdate=rs.getDate("bdate");
 				Date mdate=rs.getDate("mdate");
 				int hit = rs.getInt("hit");
-				board=new BoardVO(boardNum,title,content,writer,bdate,mdate,hit);
 				
+				board=new BoardVO(boardNum,title,content,writer,bdate,mdate,hit);
+				upHit(boardNum);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -161,6 +162,7 @@ public class BoardDAO {
 	}
 	
 	public void getBoardUpdate(String title,String content,int boardNum) {
+
 		Connection con=null;
 		PreparedStatement pmt=null;
 		try {
@@ -182,5 +184,13 @@ public class BoardDAO {
 			}
 		}
 	}
+	 
 	
+	//서비스가 아닌 getBoardDetail 실행시 자동으로 같이 실행되도록 처리하기
+	// 글제목 클릭할떄마다 조회수를 상승시키는 메서드
+	private void upHit(int strBId) {
+		
+		String sql = "update boardinfo set hit =(hit+1) where board_num=?";
+		System.out.println("현재 조회된 글 번호:"+strBId);
+	}
 }

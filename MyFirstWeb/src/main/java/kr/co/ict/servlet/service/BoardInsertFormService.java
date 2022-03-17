@@ -18,11 +18,8 @@ public class BoardInsertFormService implements IBoardService{
 		System.out.println("insertForm.do:"+sId);
 		// 글쓰기창에 아이디를 보내서 로그인 사용자 명이 곧 아이디로 쓰이도록 처리
 		request.setAttribute("sId", sId);
-		if(sId==null) {	
-		RequestDispatcher dp = request.getRequestDispatcher("/boardList.do");
-		dp.forward(request, response);
-		}
-		return; //포워딩후에 execute선에서 메서드가 종료되게 해서 FrontController쪽 실행을 방지하면 에러가 안뜸
+	
+		
 	}
 
 }

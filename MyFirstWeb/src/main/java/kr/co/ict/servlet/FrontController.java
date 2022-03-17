@@ -58,6 +58,7 @@ public class FrontController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		// 프론트 컨트롤러는 여러 주소 요청을 처리하기 때문에 uri부터 받아옵니다.
 		String uri=request.getRequestURI();
+		
 		// 포워딩할 .jsp 파일의 경로를 미리 저장해둘 변수
 		String ui = null;
 		
