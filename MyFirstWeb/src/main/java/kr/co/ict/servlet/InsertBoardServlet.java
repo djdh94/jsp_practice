@@ -41,10 +41,7 @@ public class InsertBoardServlet extends HttpServlet {
 		// insert 로직 호출 ( 필요 파라미터는 폼에서 날아온다고 가정하고 입력)
 		dao.insertBoard(title, content, writer);
 		// 다 끝났다면 , 리다이렉트 방식으로 서블릿 주소 boardlist로 이동시킵니다.
-		response.sendRedirect("http://localhost:8181/MyFirstWeb/board/boardlist");
-
-
-		
+		response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList");
 
 	}
 

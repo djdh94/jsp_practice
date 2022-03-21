@@ -30,7 +30,6 @@ public class BoardDAO {
 		}
 		return dao;
 	}
-	
 	// DAO코드 재활용하기
 	// 1. UserDAO에서 주석처리가 안된부분만 getInstance()메서드 까지 가져옴
 	// 2. ~~~DAO 로 되어있는 부분을 전부 현재 DAO클래스명으로 변경
@@ -58,9 +57,7 @@ public class BoardDAO {
 		
 		BoardVO boardDate = new BoardVO(boardNum,title,content,writer,bdate,mdate,hit);
 		boardList.add(boardDate);
-			
 		}
-		
 	}catch(Exception e) {
 		e.printStackTrace();
 	}finally {
@@ -104,4 +101,66 @@ public class BoardDAO {
 		}
 	
 	}
+	
+	// 글 한개가 필요한 상황이므로 BoardVO 하나면 처리 가능
+	public BoardVO getBoardDetail(int board_num) {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		ResultSet rs= null;
+		BoardVO board = null;
+		try {
+			con=ds.getConnection();
+			String sql="select*from boardinfo where board_num=?";
+			pmt=con.prepareStatement(sql);
+			pmt.setInt(1, board_num);
+			rs=pmt.executeQuery();
+			if(rs.next()) {
+				int boardNum=rs.getInt("board_num");
+				String title=rs.getString("title");
+				String content=rs.getString("content");
+				String writer=rs.getString("writer");
+				Date bdate=rs.getDate("bdate");
+				Date mdate=rs.getDate("mdate");
+				int hit = rs.getInt("hit");
+				board=new BoardVO(boardNum,title,content,writer,bdate,mdate,hit);
+				
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				pmt.close();
+				rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return board;
+	}
+	public void getDelete(int boardNum) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = ds.getConnection();
+			
+			String sql = "DELETE FROM boardinfo WHERE board_num = ?";
+			pstmt = con.prepareStatement(sql);
+		
+			pstmt.setInt(1, boardNum);
+			
+			pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				pstmt.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 }
