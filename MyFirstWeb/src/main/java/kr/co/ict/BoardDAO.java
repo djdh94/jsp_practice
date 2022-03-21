@@ -36,15 +36,19 @@ public class BoardDAO {
 	// 3. 필요한 로직과 유사한 메서드 복사해오기
 	// 게시판 글 전체목록 가져오기->회원전체목록 가져오기를 통해 수정
 
-	public List<BoardVO> getAllBoardList(){
+	// 페이징 처리를 위해 페이지 번호를 추가로 입력받습니다.
+	public List<BoardVO> getAllBoardList(int pageNum){
 		Connection con = null;
 		PreparedStatement pmt = null;
 		ResultSet  rs = null;
 		List<BoardVO> boardList = new ArrayList<>();
 	try {
 		con=ds.getConnection();
-		String sql="select*from boardinfo order by board_num desc";
+		int limitNum = ((pageNum-1)*20);
+		// Limit 뒤쪽 숫자가 페이지당 보여줄 글 개수이므로 dto의 상수와 함께 고쳐야함.
+		String sql="select*from boardinfo order by board_num desc limit ?,20";
 		pmt = con.prepareStatement(sql);
+		pmt.setInt(1, limitNum);
 		rs = pmt.executeQuery();
 		while(rs.next()) {
 		int boardNum=rs.getInt("board_num");
@@ -108,12 +112,14 @@ public class BoardDAO {
 		PreparedStatement pmt=null;
 		ResultSet rs= null;
 		BoardVO board = null;
+		//upHit(board_num); // 조회수 올리는 로직을 실행한 다음 글정보 불러오게 처리
 		try {
 			con=ds.getConnection();
 			String sql="select*from boardinfo where board_num=?";
 			pmt=con.prepareStatement(sql);
 			pmt.setInt(1, board_num);
 			rs=pmt.executeQuery();
+			
 			if(rs.next()) {
 				int boardNum=rs.getInt("board_num");
 				String title=rs.getString("title");
@@ -188,9 +194,49 @@ public class BoardDAO {
 	
 	//서비스가 아닌 getBoardDetail 실행시 자동으로 같이 실행되도록 처리하기
 	// 글제목 클릭할떄마다 조회수를 상승시키는 메서드
-	private void upHit(int strBId) {
+	public void upHit(int strBId) {
 		
-		String sql = "update boardinfo set hit =(hit+1) where board_num=?";
-		System.out.println("현재 조회된 글 번호:"+strBId);
+		// update에 맞는 접속로직 작성하기(try~catch,connection,pstmt 생성등 까지만)
+		Connection con =null;
+		PreparedStatement psmt=null;
+		try {
+			con=ds.getConnection();
+			String sql = "update boardinfo set hit =(hit+1) where board_num=?";
+			
+			psmt=con.prepareStatement(sql);
+			psmt.setInt(1, strBId);
+			psmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	// 페이징 처리를 위해 글 전체 개수를 구해오기
+	// 하단에 public int getPageNum()을 작성하기
+	public int getPageNum() {
+		Connection con=null;
+		PreparedStatement pmt=null;
+		ResultSet rs=null;
+		int pageNum=0;
+		try {
+			con=ds.getConnection();
+			String sql="select count(*) from boardinfo";
+			pmt=con.prepareStatement(sql);
+			rs=pmt.executeQuery();
+			if(rs.next()) {
+				pageNum=rs.getInt(1);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				pmt.close();
+				rs.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return pageNum;
 	}
 }

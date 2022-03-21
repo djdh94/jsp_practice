@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%request.setCharacterEncoding("utf-8"); %>
@@ -34,6 +34,7 @@
 			
 		</c:forEach>
 	</table>
+	${dto }
 	<c:if test="${sessionScope.session_id ne null }">
 <a href="http://localhost:8181/MyFirstWeb/boardInsertForm.do"><button>글쓰기</button></a>
 </c:if>

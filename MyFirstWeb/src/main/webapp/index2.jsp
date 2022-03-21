@@ -29,7 +29,7 @@
 <a href="http://localhost:8181/MyFirstWeb/users/join_form.jsp">회원가입하기</a>
 </c:if>
 <!-- 로그아웃버튼은 로그인한 사용자한테만 보임. 로그아웃 버튼을 로그인한 사용자만 보이게 만들어서 태그를 1:1로 보내기 -->
-<c:if test="${sessionScope.session_id ne null }">
+<c:if test="${sId ne null }">
 <a href="http://localhost:8181/MyFirstWeb/users/login_logout.jsp">로그아웃</a>
 </c:if>
 

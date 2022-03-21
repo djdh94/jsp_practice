@@ -79,7 +79,7 @@ public class FrontController extends HttpServlet {
 			sv.execute(request, response);
 			ui="board/boarddetail.jsp";
 			System.out.println("deatail 접속됨");
-		} else if(uri.equals("/MyFirstWeb/boardInsert.do")) {
+		} else if(uri.equals("/MyFirstWeb/insertBoard.do")) {
 			sv = new BoardInsertService();
 			sv.execute(request, response);
 			ui = "/boardList.do";

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <!-- 세션아이디랑 글쓴이 아이디를 비교해서 일치하지 않으면 boardList.do로 리다이렉트 시키는 로직작성-->
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <c:if test="${sessionScope.session_id ne ${board.writer }">
+    <c:if test="${sessionScope.session_id ne board.writer }">
     <%response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList.do"); %>
     </c:if>
 <!DOCTYPE html>
