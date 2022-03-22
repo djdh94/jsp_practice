@@ -28,10 +28,10 @@ public class BoardDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String strbNum=request.getParameter("board_num");
-		int bnum=Integer.parseInt(strbNum);
-		BoardDAO dao=BoardDAO.getInstance();
-		dao.getDelete(bnum);
+		String snum= request.getParameter("board_num");
+		int bnum = Integer.parseInt(snum);
+		BoardDAO dao = BoardDAO.getInstance();
+		dao.getBoardDelete(bnum);
 		response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList");
 		
 		
